@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,5 +37,54 @@ public class AccountRegistrationPage extends BasePage {
 	WebElement btnContinue;
 
 	@FindBy(xpath="//h1[text()='Your Account Has Been Created!']")
-	WebElement msgConfirmation;	
+	WebElement msgConfirmation;
+	
+	public void setFirstName(String firstName)
+	{
+		txtFirstName.sendKeys(firstName);
+	}
+
+	public void setLastName(String lastName)
+	{
+		txtLastElement.sendKeys(lastName);
+	}
+
+	public void setEmail(String email)
+	{
+		txtEmail.sendKeys(email);
+	}
+
+
+	public void setTelephone(String telephone)
+	{
+		txtTelephone.sendKeys(telephone);
+	}
+
+	public void setPassword(String pass)
+	{
+		txtPassword.sendKeys(pass);
+	}
+
+	public void setConfirmPass(String confPass)
+	{
+		txtPassConfirm.sendKeys(confPass);
+	}
+
+	public void clickPrivacyPolicy()
+	{
+		chkPrivacyPolicy.click();
+	}
+
+	public void clickContinue()
+	{
+		//btnContinue.click();
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()", btnContinue);
+	}
+
+	public String msgConfirmation()
+	{
+		return msgConfirmation.getText();
+	}
 }
