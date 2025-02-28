@@ -36,4 +36,16 @@ public class ExcelUtility {
 		fi.close();
 		return rowCount;	
 	}
+	
+	public int getCellCount(String sheetName, int rownum) throws IOException
+	{
+		fi = new FileInputStream(path);
+		workbook = new XSSFWorkbook(fi);
+		sheet = workbook.getSheet(sheetName);
+		row = sheet.getRow(rownum);
+		int cellCount = row.getLastCellNum();
+		workbook.close();
+		fi.close();
+		return cellCount;
+	}
 }
