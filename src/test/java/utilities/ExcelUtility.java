@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -47,5 +48,43 @@ public class ExcelUtility {
 		workbook.close();
 		fi.close();
 		return cellCount;
+	}
+	
+	public String getCellData(String sheetName,int rownum,int colnum) throws IOException
+	{
+		fi = new FileInputStream(path);
+		workbook = new XSSFWorkbook(fi);
+		sheet = workbook.getSheet(sheetName);
+		row = sheet.getRow(rownum);
+		cell=row.getCell(colnum);
+		
+		DataFormatter formatter = new DataFormatter();
+		String data;
+		
+		try {
+			data = formatter.formatCellValue(cell);
+		}
+		catch(Exception e)
+		{
+			data="";
+		}
+		workbook.close();
+		fi.close();
+		return data;
+	}
+	
+	public void setCellData(String sheetName,int rownum,int colnum,String data) throws IOException
+	{
+		fi = new FileInputStream(path);
+		workbook = new XSSFWorkbook(fi);
+		sheet = workbook.getSheet(sheetName);
+		row = sheet.getRow(rownum);
+		cell = row.createCell(colnum);
+		cell.setCellValue(data);
+		fo = new FileOutputStream(path);
+		workbook.write(fo);
+		workbook.close();
+		fi.close();
+		fo.close();
 	}
 }
