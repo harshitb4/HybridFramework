@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -87,4 +89,44 @@ public class ExcelUtility {
 		fi.close();
 		fo.close();
 	}
+	
+	public void fillGreenColor(String sheetName, int rownum, int colnum) throws IOException
+	{
+		fi = new FileInputStream(path);
+		workbook = new XSSFWorkbook(fi);
+		sheet = workbook.getSheet(sheetName);
+		row = sheet.getRow(rownum);
+		cell = row.getCell(colnum);
+		
+		style = workbook.createCellStyle();
+		style.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+		style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+		
+		cell.setCellStyle(style);
+		fo = new FileOutputStream(path);
+		workbook.write(fo);
+		workbook.close();
+		fi.close();
+		fo.close();
+	}
+	
+	 public void setRedColor(String sheetName, int rownum, int colnum) throws IOException
+	    {
+	    	fi = new FileInputStream(path);
+	    	workbook = new XSSFWorkbook(fi);
+	    	sheet = workbook.getSheet(sheetName);
+	    	row = sheet.getRow(rownum);
+	    	cell = row.getCell(colnum);
+	    	
+	    	style = workbook.createCellStyle();
+	    	style.setFillForegroundColor(IndexedColors.RED.getIndex());
+	    	style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+	    	
+	    	cell.setCellStyle(style);
+	    	fo = new FileOutputStream(path);
+	    	workbook.write(fo);
+	    	workbook.close();
+	    	fo.close();
+	    	fi.close();
+	    }
 }
