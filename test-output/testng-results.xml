@@ -1,21 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-26T22:17:03 IST" name="Default suite" finished-at="2025-02-26T22:17:23 IST" duration-ms="20297">
+  <suite started-at="2025-03-05T22:08:21 IST" name="Default suite" finished-at="2025-03-05T22:09:06 IST" duration-ms="44882">
     <groups>
+      <group name="dataDriven">
+        <method signature="TC001_LoginTest.verify_Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TC001_LoginTest@201a4587]" name="verify_Login" class="testcases.TC001_LoginTest"/>
+      </group> <!-- dataDriven -->
     </groups>
-    <test started-at="2025-02-26T22:17:03 IST" name="Default test" finished-at="2025-02-26T22:17:23 IST" duration-ms="20297">
+    <test started-at="2025-03-05T22:08:21 IST" name="Default test" finished-at="2025-03-05T22:09:06 IST" duration-ms="44882">
       <class name="testcases.TC001_LoginTest">
-        <test-method is-config="true" signature="login()[pri:0, instance:testcases.TC001_LoginTest@31fa1761]" started-at="2025-02-26T22:17:03 IST" name="login" finished-at="2025-02-26T22:17:18 IST" duration-ms="14806" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:testcases.TC001_LoginTest@201a4587]" started-at="2025-03-05T22:08:21 IST" name="login" finished-at="2025-03-05T22:08:55 IST" duration-ms="33835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="verify_Login()[pri:0, instance:testcases.TC001_LoginTest@31fa1761]" started-at="2025-02-26T22:17:18 IST" name="verify_Login" finished-at="2025-02-26T22:17:23 IST" duration-ms="5050" status="PASS">
+        <test-method signature="verify_Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TC001_LoginTest@201a4587]" started-at="2025-03-05T22:08:57 IST" name="verify_Login" data-provider="LoginData" finished-at="2025-03-05T22:08:58 IST" duration-ms="1907" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bittu@123gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Bittu@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_Login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC001_LoginTest@31fa1761]" started-at="2025-02-26T22:17:23 IST" name="tearDown" finished-at="2025-02-26T22:17:23 IST" duration-ms="353" status="PASS">
+        <test-method signature="verify_Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TC001_LoginTest@201a4587]" started-at="2025-03-05T22:08:58 IST" name="verify_Login" data-provider="LoginData" finished-at="2025-03-05T22:09:00 IST" duration-ms="1930" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abc@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Login -->
+        <test-method signature="verify_Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TC001_LoginTest@201a4587]" started-at="2025-03-05T22:09:00 IST" name="verify_Login" data-provider="LoginData" finished-at="2025-03-05T22:09:02 IST" duration-ms="2065" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[qas@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12qwe]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Login -->
+        <test-method signature="verify_Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TC001_LoginTest@201a4587]" started-at="2025-03-05T22:09:02 IST" name="verify_Login" data-provider="LoginData" finished-at="2025-03-05T22:09:04 IST" duration-ms="1728" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bisht@123gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Bisht@123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Login -->
+        <test-method signature="verify_Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.TC001_LoginTest@201a4587]" started-at="2025-03-05T22:09:04 IST" name="verify_Login" data-provider="LoginData" finished-at="2025-03-05T22:09:05 IST" duration-ms="1212" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bisht@123gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Bisht@1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Login -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC001_LoginTest@201a4587]" started-at="2025-03-05T22:09:05 IST" name="tearDown" finished-at="2025-03-05T22:09:06 IST" duration-ms="428" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

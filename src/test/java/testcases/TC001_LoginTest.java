@@ -7,27 +7,49 @@ import pageobjects.HomePage;
 import pageobjects.LoginPage;
 import pageobjects.MyAccountPage;
 import testbase.BaseClass;
+import utilities.DataProviders;
 
 public class TC001_LoginTest extends BaseClass {
 
-	@Test
-	public void verify_Login() throws InterruptedException
+	@Test(dataProvider="LoginData", dataProviderClass=DataProviders.class,groups= {"dataDriven"} )
+	public void verify_Login(String email, String password, String result) throws InterruptedException
 	{
 		HomePage hp = new HomePage(driver);
 		hp.clickMyAccount();
 		hp.clickLogin();
 		
 		LoginPage lp = new LoginPage(driver);
-		lp.setEmail("bittu@123gmail.com");
-		lp.setPassword("Bittu@123");
+		lp.setEmail(email);
+		lp.setPassword(password);
 		lp.clickLogin();
 		
 		MyAccountPage my_Acc = new MyAccountPage(driver);
 		boolean accPage = my_Acc.isMyAccountPageExist();
 		
-		Thread.sleep(3000);
-		
-		Assert.assertTrue(accPage);
+		if(result.equalsIgnoreCase("valid"))
+		{
+			if(accPage)
+			{
+				Assert.assertTrue(true);
+				my_Acc.clickLinkLogout();
+			}
+			else
+			{
+				Assert.assertTrue(false);
+			}
+		}
+		else
+		{
+			if(accPage)
+			{
+				Assert.assertTrue(false);
+				my_Acc.clickLinkLogout();
+			}
+			else
+			{
+				Assert.assertTrue(true);
+			}
+		}
 		
 	}
 }

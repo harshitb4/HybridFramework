@@ -10,10 +10,11 @@ public class BaseClass {
 	public WebDriver driver;
 	
 	@BeforeClass
-	public void login()
+	public void login() throws InterruptedException
 	{
 		driver = new ChromeDriver();
 		driver.get("https://tutorialsninja.com/demo/");
+		Thread.sleep(10000);
 		driver.manage().window().maximize();
 	}
 	

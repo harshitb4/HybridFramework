@@ -5,7 +5,9 @@
     <classes>
       <class name="testcases.TC001_LoginTest">
         <methods>
-          <include name="verify_Login"/>
+          <include name="tearDown"/>
+          <include name="login"/>
+          <include name="verify_Login" invocation-numbers="1 2 4"/>
         </methods>
       </class> <!-- testcases.TC001_LoginTest -->
     </classes>
