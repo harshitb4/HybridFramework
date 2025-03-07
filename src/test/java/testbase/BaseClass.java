@@ -1,5 +1,6 @@
 package testbase;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -31,5 +32,23 @@ public class BaseClass {
 		driver.quit();
 		
 		logger.info("Driver quit Statement");
+	}
+	
+	public String randomString()
+	{
+		String generatedString = RandomStringUtils.randomAlphabetic(5);
+		return generatedString;
+	}
+	
+	public String randomNumber()
+	{
+		String generatedNumber = RandomStringUtils.randomNumeric(10);
+		return generatedNumber;
+	}
+	
+	public String randomAlphaNumeric()
+	{
+		String randomAlphaNumeric = RandomStringUtils.randomAlphanumeric(6);
+		return randomAlphaNumeric;
 	}
 }
