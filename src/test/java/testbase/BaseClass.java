@@ -1,8 +1,14 @@
 package testbase;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -50,5 +56,20 @@ public class BaseClass {
 	{
 		String randomAlphaNumeric = RandomStringUtils.randomAlphanumeric(6);
 		return randomAlphaNumeric;
+	}
+	
+	public String captureScreen(String tName)
+	{
+		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		
+		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+		
+		String targetFilePath = System.getProperty("user.dir")+"\\screenshots\\"+tName+"_"+timeStamp+".png";
+		File targetFile = new File(targetFilePath);
+		
+		sourceFile.renameTo(targetFile);
+		
+		return targetFilePath;
 	}
 }

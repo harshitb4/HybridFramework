@@ -17,6 +17,8 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import testbase.BaseClass;
+
 public class ExtentReportManager implements ITestListener {
 
 	public ExtentSparkReporter sparkReporter;
@@ -60,13 +62,13 @@ public class ExtentReportManager implements ITestListener {
 	
 	public void onTestSuccess(ITestResult result)
 	{
-		if (test == null) {  // Create class-level entry only once
+		/*if (test == null) {  // Create class-level entry only once
 	        test = extent.createTest(result.getTestClass().getName());
 	    }
-	    test.createNode(result.getName()).log(Status.PASS, result.getName() + " got successfully executed");
-		//test = extent.createTest(result.getTestClass().getName());
-		//test.assignCategory(result.getMethod().getGroups());
-		//test.log(Status.PASS, result.getName()+"got successfully executed");
+	    test.createNode(result.getName()).log(Status.PASS, result.getName() + " got successfully executed");*/
+		test = extent.createTest(result.getTestClass().getName());
+		test.assignCategory(result.getMethod().getGroups());
+		test.log(Status.PASS, result.getName()+"got successfully executed");
 	}
 	
 	public void onTestFailure(ITestResult result)
@@ -74,6 +76,9 @@ public class ExtentReportManager implements ITestListener {
 		test = extent.createTest(result.getTestClass().getName());
 		test.assignCategory(result.getMethod().getGroups());
 		test.log(Status.FAIL, result.getName()+"got failed");
+		
+		String imgPath = new BaseClass().captureScreen(result.getName());
+		test.addScreenCaptureFromPath(imgPath);
 	}
 	
 	public void onTestSkipped(ITestResult result)

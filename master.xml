@@ -10,6 +10,7 @@
     
     <classes>
       <class name="testcases.TC002_AccountRegistrationTest"/>
+      <class name="testcases.TC001_LoginTest"/>
     </classes>
     
   </test> 
