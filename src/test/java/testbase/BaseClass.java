@@ -1,8 +1,11 @@
 package testbase;
 
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -18,14 +21,19 @@ public class BaseClass {
 
 	public WebDriver driver;
 	public Logger logger;
+	public Properties p;
 	
 	@BeforeClass
-	public void login() throws InterruptedException
+	public void login() throws InterruptedException, IOException
 	{
+		FileReader file = new FileReader("./src/test//resources//config.properties");
+		p= new Properties();
+		p.load(file);
+		
 		logger = LogManager.getLogger(this.getClass());
 		
 		driver = new ChromeDriver();
-		driver.get("https://tutorialsninja.com/demo/");
+		driver.get(p.getProperty("appURL"));
 		Thread.sleep(10000);
 		driver.manage().window().maximize();
 		

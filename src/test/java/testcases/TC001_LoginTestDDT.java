@@ -9,7 +9,7 @@ import pageobjects.MyAccountPage;
 import testbase.BaseClass;
 import utilities.DataProviders;
 
-public class TC001_LoginTest extends BaseClass {
+public class TC001_LoginTestDDT extends BaseClass {
 
 	@Test(dataProvider="LoginData", dataProviderClass=DataProviders.class,groups= {"dataDriven"} )
 	public void verify_Login(String email, String password, String result) throws InterruptedException
