@@ -220,3 +220,9 @@
 2025-03-10 22:24:24 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
 2025-03-10 22:24:24 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
 2025-03-10 22:24:32 [main] INFO  testcases.TC001_LoginTest - Driver quit Statement
+2025-03-14 21:30:41 [main] INFO  testcases.TC002_AccountRegistrationTest - Application is Launched
+2025-03-14 21:30:47 [main] INFO  testcases.TC002_AccountRegistrationTest - Driver quit Statement
+2025-03-14 21:32:48 [main] INFO  testcases.TC002_AccountRegistrationTest - Application is Launched
+2025-03-14 21:32:54 [main] INFO  testcases.TC002_AccountRegistrationTest - Driver quit Statement
+2025-03-14 21:35:31 [main] INFO  testcases.TC002_AccountRegistrationTest - Application is Launched
+2025-03-14 21:35:37 [main] INFO  testcases.TC002_AccountRegistrationTest - Driver quit Statement

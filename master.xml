@@ -7,10 +7,11 @@
   </listeners>
 
     <test name="Test1">
-    
+         <parameter name="browser" value="edge" />
+         <parameter name="os" value="Windows" />
     <classes>
       <class name="testcases.TC002_AccountRegistrationTest"/>
-      <class name="testcases.TC001_LoginTest"/>
+      <!--  <class name="testcases.TC001_LoginTest"/> -->
     </classes>
     
   </test> 

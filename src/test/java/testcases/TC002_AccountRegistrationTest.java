@@ -36,16 +36,4 @@ public class TC002_AccountRegistrationTest extends BaseClass {
 			Assert.assertTrue(false);
 		}
 	}
-	
-	@Test
-	public void a()
-	{
-		Assert.assertTrue(true);
-	}
-	
-	@Test
-	public void b()
-	{
-		Assert.assertTrue(true);
-	}
 }
