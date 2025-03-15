@@ -7,7 +7,25 @@
   </listeners>
 
     <test name="Test1">
+         <parameter name="browser" value="chrome" />
+         <parameter name="os" value="Windows" />
+    <classes>
+      <class name="testcases.TC002_AccountRegistrationTest"/>
+      <!--  <class name="testcases.TC001_LoginTest"/> -->
+    </classes>
+    </test>
+    
+    <test name="Test2">
          <parameter name="browser" value="edge" />
+         <parameter name="os" value="Windows" />
+    <classes>
+      <class name="testcases.TC002_AccountRegistrationTest"/>
+      <!--  <class name="testcases.TC001_LoginTest"/> -->
+    </classes>
+    </test>
+    
+    <test name="Test3">
+         <parameter name="browser" value="firefox" />
          <parameter name="os" value="Windows" />
     <classes>
       <class name="testcases.TC002_AccountRegistrationTest"/>

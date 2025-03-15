@@ -10,7 +10,7 @@ import testbase.BaseClass;
 public class TC002_AccountRegistrationTest extends BaseClass {
 
 	@Test
-	public void verify_account_registration()
+	public void verify_account_registration() throws InterruptedException
 	{
 		HomePage hp = new HomePage(driver);
 		hp.clickMyAccount();
@@ -26,7 +26,7 @@ public class TC002_AccountRegistrationTest extends BaseClass {
 		acc_Reg_Page.setConfirmPass(pass);
 		acc_Reg_Page.clickPrivacyPolicy();
 		acc_Reg_Page.clickContinue();
-		
+		Thread.sleep(5000);
 		if(acc_Reg_Page.msgConfirmation().equalsIgnoreCase("Your Account Has Been Created!"))
 		{
 			Assert.assertTrue(true);
