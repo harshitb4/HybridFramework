@@ -142,6 +142,7 @@ public class BaseClass {
 	
 	public String captureScreen(String tName)
 	{
+		logger.info("Capture screen invoked");
 		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		String targetFilePath = System.getProperty("user.dir")+"\\screenshots\\"+tName+"_"+timeStamp+".png";
 		

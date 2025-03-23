@@ -60,6 +60,7 @@ public class ExtentReportManager implements ITestListener {
 		}
 	}
 	
+	@Override
 	public void onTestSuccess(ITestResult result)
 	{
 		/*if (test == null) {  // Create class-level entry only once
@@ -71,16 +72,27 @@ public class ExtentReportManager implements ITestListener {
 		test.log(Status.PASS, result.getName()+"got successfully executed");
 	}
 	
+	@Override
 	public void onTestFailure(ITestResult result)
 	{	
+		System.out.println("OnTestFailure started");
+		//logger.info("On failure test method started");
 		test = extent.createTest(result.getTestClass().getName());
 		test.assignCategory(result.getMethod().getGroups());
 		test.log(Status.FAIL, result.getName()+"got failed");
-		
-		String imgPath = new BaseClass().captureScreen(result.getName());
+		System.out.println("Failed status logged successfully");
+		//logger.info("Failed status logged successfully");
+		System.out.println(result.getName());
+		BaseClass base = (BaseClass) result.getInstance();
+		String imgPath = base.captureScreen(result.getName());
+		System.out.println("ImagePath is: "+imgPath);
+		//logger.info("Image path stored scuuessfully");
 		test.addScreenCaptureFromPath(imgPath);
+		System.out.println("Screenshot attached successfully");
+		//logger.info("Attached screenshot successfully");
 	}
 	
+	@Override
 	public void onTestSkipped(ITestResult result)
 	{
 		test = extent.createTest(result.getTestClass().getName());
@@ -88,6 +100,7 @@ public class ExtentReportManager implements ITestListener {
 		test.log(Status.SKIP, result.getName()+"got skipped");
 	}
 	
+	@Override
 	public void onFinish(ITestContext testContext)
 	{
 		extent.flush();

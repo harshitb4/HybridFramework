@@ -8,39 +8,13 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testcases.TC002_AccountRegistrationTest">
+      <class name="testcases.TC001_LoginTestDDT">
         <methods>
+          <include name="verify_Login" invocation-numbers="1"/>
           <include name="tearDown"/>
-          <include name="verify_account_registration"/>
           <include name="login"/>
         </methods>
-      </class> <!-- testcases.TC002_AccountRegistrationTest -->
+      </class> <!-- testcases.TC001_LoginTestDDT -->
     </classes>
   </test> <!-- Test1(failed) -->
-  <test thread-count="3" name="Test2(failed)">
-    <parameter name="os" value="Windows"/>
-    <parameter name="browser" value="edge"/>
-    <classes>
-      <class name="testcases.TC002_AccountRegistrationTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="verify_account_registration"/>
-          <include name="login"/>
-        </methods>
-      </class> <!-- testcases.TC002_AccountRegistrationTest -->
-    </classes>
-  </test> <!-- Test2(failed) -->
-  <test thread-count="3" name="Test3(failed)">
-    <parameter name="os" value="Windows"/>
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="testcases.TC002_AccountRegistrationTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="verify_account_registration"/>
-          <include name="login"/>
-        </methods>
-      </class> <!-- testcases.TC002_AccountRegistrationTest -->
-    </classes>
-  </test> <!-- Test3(failed) -->
 </suite> <!-- Failed suite [Suite] -->

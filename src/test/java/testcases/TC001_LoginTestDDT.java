@@ -1,8 +1,7 @@
 package testcases;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import org.testng.asserts.SoftAssert;
 import pageobjects.HomePage;
 import pageobjects.LoginPage;
 import pageobjects.MyAccountPage;
@@ -11,9 +10,10 @@ import utilities.DataProviders;
 
 public class TC001_LoginTestDDT extends BaseClass {
 
-	@Test(dataProvider="LoginData", dataProviderClass=DataProviders.class,groups= {"dataDriven"} )
+	@Test(dataProvider="LoginData", dataProviderClass=DataProviders.class,groups= {"dataDriven"}, alwaysRun = true )
 	public void verify_Login(String email, String password, String result) throws InterruptedException
 	{
+		Thread.sleep(5000);
 		logger.info("Starting Login Test with email: "+email+" and expected result: "+result);
 		
 		HomePage hp = new HomePage(driver);
@@ -33,19 +33,21 @@ public class TC001_LoginTestDDT extends BaseClass {
 		MyAccountPage my_Acc = new MyAccountPage(driver);
 		boolean accPage = my_Acc.isMyAccountPageExist();
 		
+		SoftAssert softAssert = new SoftAssert();
+		
 		if(result.equalsIgnoreCase("valid"))
 		{
 			if(accPage)
 			{
 				logger.info("Login Successful. User is on My Account page");
-				Assert.assertTrue(true);
+				softAssert.assertTrue(true);
 				my_Acc.clickLinkLogout();
 				logger.info("Logged out successfully");
 			}
 			else
 			{
 				logger.info("Login failed for valid credentials.");
-				Assert.assertTrue(false);
+				softAssert.assertTrue(false);
 			}
 		}
 		else
@@ -53,16 +55,17 @@ public class TC001_LoginTestDDT extends BaseClass {
 			if(accPage)
 			{
 				logger.info("Login successful for invalid credentials. Test failed");
-				Assert.assertTrue(false);
+				softAssert.assertTrue(false);
 				my_Acc.clickLinkLogout();
 				logger.info("Logged out successfully.");
 			}
 			else
 			{
 				logger.info("Login failed as expected for invalid credentials");
-				Assert.assertTrue(true);
+				softAssert.assertTrue(true);
 			}
 		}
 		logger.info("Test execution completed for email: "+email);
+	    softAssert.assertAll(); // Ensures failure is logged, but test continues
 	}
 }
