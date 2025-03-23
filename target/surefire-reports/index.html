@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,12 +21,11 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testcases.TC001_LoginTestDDT" class="method navigator-link" hash-for-method="verify_Login(abc@gmail.com, 123, valid)">verify_Login(abc@gmail.com, 123, valid)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -123,12 +108,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testcases.TC001_LoginTestDDT" class="method navigator-link" hash-for-method="verify_Login(bittu@123gmail.com, Bittu@123, valid)">verify_Login(bittu@123gmail.com, Bittu@123, valid)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="testcases.TC001_LoginTestDDT" class="method navigator-link" hash-for-method="verify_Login(bisht@123gmail.com, Bisht@1234, invalid)">verify_Login(bisht@123gmail.com, Bisht@1234, invalid)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testcases.TC001_LoginTestDDT" class="method navigator-link" hash-for-method="verify_Login(bittu@123gmail.com, Bittu@123, valid)">verify_Login(bittu@123gmail.com, Bittu@123, valid)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testcases.TC001_LoginTestDDT" class="method navigator-link" hash-for-method="verify_Login(abc@gmail.com, 123, invalid)">verify_Login(abc@gmail.com, 123, invalid)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -148,28 +138,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testcases.TC001_LoginTestDDT</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verify_Login(abc@gmail.com, 123, valid)">
-                  </a> <!-- verify_Login(abc@gmail.com, 123, valid) -->
-                  <span class="method-name">verify_Login</span>
-                  <span class="parameters">(abc@gmail.com, 123, valid)</span>
-                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
-	expected [true] but found [false]
-	at testcases.TC001_LoginTestDDT.verify_Login(TC001_LoginTestDDT.java:69)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -181,15 +149,7 @@
                   <a name="verify_Login(qas@gmail.com, 12qwe, invalid)">
                   </a> <!-- verify_Login(qas@gmail.com, 12qwe, invalid) -->
                   <span class="method-name">verify_Login</span>
-                  <span class="parameters">(qas@gmail.com, 12qwe, invalid)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verify_Login(bisht@123gmail.com, Bisht@1234, invalid)">
-                  </a> <!-- verify_Login(bisht@123gmail.com, Bisht@1234, invalid) -->
-                  <span class="method-name">verify_Login</span>
-                  <span class="parameters">(bisht@123gmail.com, Bisht@1234, invalid)</span>
+                  <span class="parameters">(qas@gmail.com,12qwe,invalid)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -197,7 +157,23 @@
                   <a name="verify_Login(bittu@123gmail.com, Bittu@123, valid)">
                   </a> <!-- verify_Login(bittu@123gmail.com, Bittu@123, valid) -->
                   <span class="method-name">verify_Login</span>
-                  <span class="parameters">(bittu@123gmail.com, Bittu@123, valid)</span>
+                  <span class="parameters">(bittu@123gmail.com,Bittu@123,valid)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_Login(bisht@123gmail.com, Bisht@1234, invalid)">
+                  </a> <!-- verify_Login(bisht@123gmail.com, Bisht@1234, invalid) -->
+                  <span class="method-name">verify_Login</span>
+                  <span class="parameters">(bisht@123gmail.com,Bisht@1234,invalid)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_Login(abc@gmail.com, 123, invalid)">
+                  </a> <!-- verify_Login(abc@gmail.com, 123, invalid) -->
+                  <span class="method-name">verify_Login</span>
+                  <span class="parameters">(abc@gmail.com,123,invalid)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -205,7 +181,7 @@
                   <a name="verify_Login(bisht@123gmail.com, Bisht@123, valid)">
                   </a> <!-- verify_Login(bisht@123gmail.com, Bisht@123, valid) -->
                   <span class="method-name">verify_Login</span>
-                  <span class="parameters">(bisht@123gmail.com, Bisht@123, valid)</span>
+                  <span class="parameters">(bisht@123gmail.com,Bisht@123,valid)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -219,11 +195,11 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;3&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite thread-count=&quot;3&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;utilities.ExtentReportManager&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;3&quot; name=&quot;Test1&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; name=&quot;Test1&quot; verbose=&quot;0&quot;&gt;
     &lt;parameter name=&quot;os&quot; value=&quot;Windows&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
@@ -279,23 +255,23 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verify_Login')
 data.setCell(0, 2, 'testcases.TC001_LoginTestDDT')
-data.setCell(0, 3, 17187);
+data.setCell(0, 3, 17892);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verify_Login')
 data.setCell(1, 2, 'testcases.TC001_LoginTestDDT')
-data.setCell(1, 3, 17116);
+data.setCell(1, 3, 17353);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'verify_Login')
 data.setCell(2, 2, 'testcases.TC001_LoginTestDDT')
-data.setCell(2, 3, 17001);
+data.setCell(2, 3, 17253);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'verify_Login')
 data.setCell(3, 2, 'testcases.TC001_LoginTestDDT')
-data.setCell(3, 3, 10125);
+data.setCell(3, 3, 8807);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'verify_Login')
 data.setCell(4, 2, 'testcases.TC001_LoginTestDDT')
-data.setCell(4, 3, 8856);
+data.setCell(4, 3, 8423);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -333,29 +309,27 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">verify_Login(bittu@123gmail.com, Bittu@123, valid)</span>
-                <span class="method-start">18350 ms</span>
+                <span class="method-start">14436 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verify_Login(abc@gmail.com, 123, valid)</span>
-                <span class="method-start">28507 ms</span>
+                <span class="method-name">verify_Login(abc@gmail.com, 123, invalid)</span>
+                <span class="method-start">22892 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_Login(qas@gmail.com, 12qwe, invalid)</span>
-                <span class="method-start">45624 ms</span>
+                <span class="method-start">40786 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_Login(bisht@123gmail.com, Bisht@123, valid)</span>
-                <span class="method-start">62814 ms</span>
+                <span class="method-start">58042 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verify_Login(bisht@123gmail.com, Bisht@1234, invalid)</span>
-                <span class="method-start">71677 ms</span>
+                <span class="method-start">66853 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">88793 ms</span>
+                <span class="method-start">84210 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
